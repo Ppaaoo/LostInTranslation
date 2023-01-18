@@ -1,19 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 import Employee from './components/Employee';
+import {useState} from 'react';
 
 function App() {
-  const showEmployees = true
+  const [role, setRole] = useState('Master cat');
+  const showEmployees = true;
   return (
     <div className="App">
       {showEmployees ? (
       <>
       <input type='text' onChange={(e) => {
-        console.log(e.target.value);
+        setRole(e.target.value);
       }}/>
         <Employee name = "Pao" role="Intern"/> 
         <Employee name = "Philip" role="Intern"/>
-        <Employee name = "Nisse"/>
+        <Employee name = "Nisse" role = {role}/>
         <Employee name = "Guffe"/>
       </>
       )
