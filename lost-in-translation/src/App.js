@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Employee from './components/Employee';
 import {useState} from 'react';
@@ -13,24 +12,15 @@ function App() {
       <input type='text' onChange={(e) => {
         setRole(e.target.value);
       }}/>
-        <Employee name = "Pao" role="Intern"/> 
-        <Employee name = "Philip" role="Intern"/>
-        <Employee name = "Nisse" role = {role}/>
-        <Employee name = "Guffe"/>
+      <div className='flex flex-wrap justify-center'>
+        <Employee name = "Pao" role="CEO" img="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg"/> 
+        <Employee name = "Philip" role="Intern" img="https://images.pexels.com/photos/35797/carnival-mask-costume-panel.jpg"/>
+        <Employee name = "Nisse" role={role} img="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg"/>
+        <Employee name = "Guffe" role="Is cat" img="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg"/>
+      </div>
       </>
       )
       : <p>You cannot see the employees</p>}
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
